@@ -1,0 +1,116 @@
+body {
+    /* margin: 0%; */
+    background-color: darkslategray;
+}
+
+p.play_game {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: yellow;
+}
+
+h3 {
+    text-align: center;
+    color: yellowgreen;
+}
+
+.image-container {
+    display: flex;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 50%;
+    align-content: center;
+    justify-content: center;
+    gap: 50px;
+    
+    
+}
+
+
+/*
+.subtext-container {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    align-content: center;
+    justify-content: center;
+    gap: 50px;
+} */
+
+.paper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.rock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.scissors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+img {
+    
+    width: 150px;
+    height: 150px;
+    max-height: 100%;
+    border: 2px solid black;
+    padding: 5%;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    
+}
+
+.player {
+    margin-right: 70px;
+}
+
+.player .value {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.PC .value {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.value {
+    margin-top: 10px;
+}
+
+.flavour {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.flavour2 {
+    text-align: center;
+    margin: 15px 0px;
+    font-size: larger;
+    font-weight: 800;
+}
