@@ -21,15 +21,11 @@ buttons.forEach((button) => {
      
         button.addEventListener("click", () => {
             userinput = button.id;
-            flavour.textContent ="";
+            //flavour.textContent ="";
             Game();
 });
 
-}
-); 
-
-
-
+}); 
 
 function computerPlay () {
     let randNum = Math.floor(Math.random()*3);
@@ -64,7 +60,6 @@ function singleGame() {             // tutorial je razdvojio userinput u jednu f
         flavour.textContent = 'You win! There is still some hope for you... Cope*';
     }
 };
-
 
 function Game() {
     
