@@ -14,6 +14,10 @@ pc_score.textContent = compScore;
 let flavour = document.querySelector(".flavour");
 let flavour2 = document.querySelector(".flavour2");
 
+let modal = document.querySelector(".modal");
+let modal_text = document.querySelector(".modal-text");
+let modal_button = document.querySelector(".modal-button");
+
 
 let buttons = document.querySelectorAll(".button");
 
@@ -26,6 +30,12 @@ buttons.forEach((button) => {
 });
 
 }); 
+
+modal_button.addEventListener("click", () => {
+  reset_game();  
+} );
+
+
 
 function computerPlay () {
     let randNum = Math.floor(Math.random()*3);
@@ -72,42 +82,37 @@ function Game() {
     
     
     if (compScore===5 && compScore_check===1) {
-        flavour2.textContent = "He is gonna cum and you gonna swalla! BUAHAHAH GAME OVER FO YOU"
-        console.log("You got squashed! BUAAHAHA");
-        alert("Wanna try this agony again?");
-        compScore = 0;
-        userScore = 0;
-        usr_score.textContent = userScore;
-        pc_score.textContent = compScore;
-        userScore_check = 0;
-        compScore_check = 0;
-        flavour.textContent = "";
-        flavour2.textContent = "";
+        modal.style.display = "block";
+        modal_text.textContent = "He is gonna cum and you gonna swalla! BUAHAHAH GAME OVER FO YOU";       // izbaci ovo
+        
     }
     
     else if (userScore===5 && userScore_check===1) {
-        flavour2.textContent = "You rocked that fucker! You'll still bang that hoe... for now"
-        console.log("You rocked the PC! Bravo!");
-        alert("Wanna try this agony again?");
-        compScore = 0;
-        userScore = 0;
-        usr_score.textContent = userScore;
-        pc_score.textContent = compScore;
-        userScore_check = 0;
-        compScore_check = 0;
-        flavour.textContent = "";
-        flavour2.textContent = "";
+        modal.style.display = "block";
+        modal_text.textContent = "You rocked that fucker! You'll still bang that hoe... for now!";
+        // isto ko gore
+
     }
     else if (compScore===4 && userScore===4) {
         flavour2.textContent = "It's a really tough one!! You two fuckers slayin each other for d hoe";
         console.log("It's a really tough one!!!!\nHold on!");
     }
     else if (compScore===4 && compScore_check===0) {
-        console.log("You're about to get demolished!!");
-        compScore_check =1;
+            compScore_check =1;
     }
-    else if (userScore===4 && userScore_check===0) {
-        console.log("You're almost there! Keep it up!!");
+    else if (userScore===4 && userScore_check===0) {       
         userScore_check = 1;
     };  
-};  
+};
+
+function reset_game () {
+        modal.style.display = "none";
+        compScore = 0;
+        userScore = 0;
+        usr_score.textContent = userScore;
+        pc_score.textContent = compScore;
+        userScore_check = 0;
+        compScore_check = 0;
+        flavour.textContent = "";
+        flavour2.textContent = "";
+};

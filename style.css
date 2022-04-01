@@ -1,6 +1,7 @@
 body {
     /* margin: 0%; */
     background-color: darkslategray;
+    
 }
 
 p.play_game {
@@ -115,3 +116,37 @@ img {
     font-weight: 800;
 }
 
+.modal {
+    display:none;
+    align-items: center;
+    /* justify-content: center; */
+    position:fixed;     /* position fixed in place */
+    top:0;
+    left:0;
+    z-index: 1;         /* sits on top */
+    height: 100%;       /* size percent based on parent container */
+    width: 100%;
+    background-color: black;        /* fallback color, in case browser can't load bottom backgrnd color */
+    background-color: rgba(0,0,0,0.4);  /* color with opacity, lower opacity number means higher transparency */
+}
+
+
+.modal-content {
+    margin: 15% auto;
+    background-color: #fefefe;
+    padding: 20px;
+    width:fit-content;
+    min-width: 10%;
+}
+
+.modal-text {
+    font-weight: bolder;
+    font-size: 22px;
+    text-align: center;
+}
+
+.modal-button {
+    position: relative;
+    display: block;
+    margin: 0% auto;
+}
