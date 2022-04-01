@@ -15,8 +15,10 @@ let flavour = document.querySelector(".flavour");
 let flavour2 = document.querySelector(".flavour2");
 
 let modal = document.querySelector(".modal");
+let modal_content = document.querySelector("-modal-content");
 let modal_text = document.querySelector(".modal-text");
 let modal_button = document.querySelector(".modal-button");
+let modal_outside = document.querySelector(".outside");
 
 
 let buttons = document.querySelectorAll(".button");
@@ -31,10 +33,25 @@ buttons.forEach((button) => {
 
 }); 
 
-modal_button.addEventListener("click", () => {
-  reset_game();  
-} );
 
+/* modal_content.addEventListener("click", () => {
+    modal.style.display = "block";
+});
+*/
+
+/* modal.addEventListener("click", () => {
+    close_modal();
+}); */
+
+window.addEventListener("click", (event) => {       // jebote, s windowom se da rijesiti
+    if (event.target==modal) {
+        modal.style.display = "none";
+    };
+});
+
+modal_button.addEventListener("click", () => {
+    reset_game();  
+  } );
 
 
 function computerPlay () {
@@ -52,19 +69,21 @@ function computerPlay () {
 };
 
 function singleGame() {             // tutorial je razdvojio userinput u jednu funkciju i if-scoring u drugu funkciju, a u mene je to zajedno
-    
+    console.log("user score ", userScore);
+    if (userScore==5 || compScore==5) {
+        modal.style.display = "block";
+    }
 
-
-    if ((userinput==="Rock"&&compRes==="Rock")||(userinput==="Scissors"&&compRes==="Scissors")||(userinput==="Paper"&&compRes==="Paper")) {
+    else if ((userinput==="Rock"&&compRes==="Rock")||(userinput==="Scissors"&&compRes==="Scissors")||(userinput==="Paper"&&compRes==="Paper")) {
         console.log("It's a tie!");
         flavour.textContent = '"All guys are same" (Tie)';
-    };
-    if ((userinput==="Rock"&&compRes==="Paper")||(userinput==="Scissors"&&compRes==="Rock")||(userinput==="Paper"&&compRes==="Scissors")) {
+    }
+    else if ((userinput==="Rock"&&compRes==="Paper")||(userinput==="Scissors"&&compRes==="Rock")||(userinput==="Paper"&&compRes==="Scissors")) {
         console.log("You lost!");
         compScore++;
         flavour.textContent = 'You lost this one! He screwed you... and her';
     }
-    if ((userinput==="Rock"&&compRes==="Scissors")||(userinput==="Scissors"&&compRes==="Paper")||(userinput==="Paper"&&compRes==="Rock")) {
+    else if ((userinput==="Rock"&&compRes==="Scissors")||(userinput==="Scissors"&&compRes==="Paper")||(userinput==="Paper"&&compRes==="Rock")) {
         console.log("You won!");
         userScore++;
         flavour.textContent = 'You win! There is still some hope for you... Cope*';
@@ -116,3 +135,7 @@ function reset_game () {
         flavour.textContent = "";
         flavour2.textContent = "";
 };
+
+function close_modal () {
+    modal.style.display = "none";
+};  
